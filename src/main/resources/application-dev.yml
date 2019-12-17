@@ -1,0 +1,72 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /holmes
+
+spring:
+  mvc:
+    static-path-pattern: /static/**
+
+  resources:
+    static-locations: classpath:/static/
+
+  thymeleaf:
+    #thymelea模板配置
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    #热部署文件，页面不产生缓存，及时更新
+    cache: false
+
+  datasource:
+    #    url: jdbc:mysql://192.168.1.250:3306/zq_erp?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=true&allowMultiQueries=true&verifyServerCertificate=false&rewriteBatchedStatements=true
+    url: jdbc:mysql://127.0.0.1:3306/hjt_holmes?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=true&allowMultiQueries=true&verifyServerCertificate=false&rewriteBatchedStatements=true
+    username: root
+    password: 1gbd25jZ
+    driverClassName: com.mysql.cj.jdbc.Driver
+    #dataSource Pool configuration
+    sqlScriptEncoding: UTF-8
+    initialization-mode: EMBEDDED
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+    # 日期格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 日期时区
+    time-zone: GMT+8
+    # 返回值null不显示
+    default-property-inclusion: non_null
+
+    # 可额外新增：mybatis-plus/redis
+
+
+# 自定义api
+api:
+  path: http://127.0.0.1:8080/erp/
+  fs: http://192.168.1.250:8080/fs/
+  data: http://192.168.1.249:8080/data/
+  oapi: http://192.168.1.227:8080/oa/oapi/
+
+web:
+  upload-path: D:/apache-tomcat-9.0.13/webapps/file/
+  access-url: http://192.168.17.108:8090/file/
+
+logging:
+  level:
+    root: INFO
+  config: classpath:log4j2-spring.xml
+
+
+mail:
+  #host: smtp.qq.com
+  #username: 601517124@qq.com
+  #password: dzpgpicsydfoeedi
+  host: smtp.163.com
+  username: hjt6355@163.com
+  password: hjt123456
