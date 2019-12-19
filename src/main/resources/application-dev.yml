@@ -57,10 +57,10 @@ web:
   upload-path: D:/apache-tomcat-9.0.13/webapps/file/
   access-url: http://192.168.17.108:8090/file/
 
-logging:
-  level:
-    root: INFO
-  config: classpath:log4j2-spring.xml
+#logging:
+#  level:
+#    root: INFO
+#  config: classpath:log4j2-spring.xml
 
 
 mail:
