@@ -5,7 +5,7 @@ server:
 
 spring:
   mvc:
-    static-path-pattern: /static/**
+    static-path-pattern: classpath:/static/**
 
   resources:
     static-locations: classpath:/static/
